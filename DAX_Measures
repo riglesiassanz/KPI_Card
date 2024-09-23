@@ -1,5 +1,5 @@
-###(€) BAI Projection = 
---- Si el mes ha terminado se proyecta el BAI. Si el mes no ha terminado, se proyecta el Budget.
+#(€) BAI Projection = 
+##--- Si el mes ha terminado se proyecta el BAI. Si el mes no ha terminado, se proyecta el Budget.
 VAR ActualBAI =
     CALCULATE ( [(€) BAI]; DimDate[MonthCompleted] = TRUE )
 VAR BudgetBAI =
