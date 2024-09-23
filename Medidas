@@ -1,0 +1,9 @@
+(€) BAI Projection = 
+--- Si el mes ha temrinado se proyecta el BAI. Si el mes no ha terminado, se proyecta el Budget.
+VAR ActualBAI =
+    CALCULATE ( [(€) BAI]; DimDate[MonthCompleted] = TRUE )
+VAR BudgetBAI =
+    CALCULATE ( [(€) BAI Budget]; DimDate[MonthCompleted] = FALSE )
+VAR Result = ActualBAI + BudgetBAI
+RETURN
+    Result
