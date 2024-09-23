@@ -1,5 +1,5 @@
-# (€) BAI Projection = 
-## --- Si el mes ha terminado se proyecta el BAI. Si el mes no ha terminado, se proyecta el Budget.
+(€) BAI Projection = 
+--- Si el mes ha terminado se proyecta el BAI. Si el mes no ha terminado, se proyecta el Budget.
 VAR ActualBAI =
     CALCULATE ( [(€) BAI]; DimDate[MonthCompleted] = TRUE )
 VAR BudgetBAI =
@@ -10,7 +10,7 @@ RETURN
 
 
 
-**KPI Δ BAI Projection s/ Budget** = 
+KPI Δ BAI Projection s/ Budget = 
 VAR __var = [(€) BAI Projection] - [(€) BAI Budget]
 VAR __signvar =
     IF ( __var > 0; "+"; "-" )
@@ -25,7 +25,6 @@ VAR __arrowdown =
 VAR __arrowvarpercent =
     IF ( __varpercent > 0; __arrowup; __arrowdown )
 RETURN
-
     __signvar & FORMAT ( __varpercent; "0.00%;0.00%" )
         & REPT ( " "; 7 ) & " | " & __signvarpercent
         & FORMAT ( __var; "#,0,," ) & " mill." & __arrowvarpercent
