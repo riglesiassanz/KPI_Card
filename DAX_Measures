@@ -31,4 +31,7 @@ RETURN
 
 
 
-
+KPI BAI Projection s/ Budget Color = 
+VAR __var = [(€) BAI Projection] - [(€) BAI Budget]
+RETURN
+    SWITCH ( TRUE (); __var > 0; "Green"; __var < 0; "Red"; "Black" )
